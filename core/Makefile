@@ -1849,8 +1849,14 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: otapackage
+DK_TARGET_PACKAGE := $(PRODUCT_OUT)/dk-$(ROM_VERSION).zip
+
+.PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+bacon: otapackage
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(DK_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(DK_TARGET_PACKAGE) > $(DK_TARGET_PACKAGE).md5sum
+	@echo -e ${PRT_CPL}"Package complete: $(DK_TARGET_PACKAGE)"${CL_RST}
 
 endif    # build_ota_package
 
