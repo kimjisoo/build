@@ -409,7 +409,7 @@ endif
 endif
 $(LOCAL_BUILT_MODULE): PRIVATE_DONT_DELETE_JAR_DIRS := $(LOCAL_DONT_DELETE_JAR_DIRS)
 $(LOCAL_BUILT_MODULE): $(all_res_assets) $(jni_shared_libraries) $(full_android_manifest)
-	@echo "target Package: $(PRIVATE_MODULE) ($@)"
+	@echo -e ${CL_GRN}"target Package:"${CL_RST}" $(PRIVATE_MODULE) ($@)"
 ifdef LOCAL_JACK_ENABLED
 	$(create-empty-package)
 else

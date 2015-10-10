@@ -1592,7 +1592,7 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(DK_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(DK_TARGET_PACKAGE) > $(DK_TARGET_PACKAGE).md5sum
-	@echo -e ${PRT_CPL}"Package complete: $(DK_TARGET_PACKAGE)"${CL_RST}
+	@echo -e ${CL_CYN}"Package complete: $(DK_TARGET_PACKAGE)"${CL_RST}
 
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
