@@ -1587,14 +1587,14 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-DK_TARGET_PACKAGE := $(PRODUCT_OUT)/dk-$(ROM_VERSION).zip
+JISOO_TARGET_PACKAGE := $(PRODUCT_OUT)/jisoo-$(ROM_VERSION).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(DK_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(DK_TARGET_PACKAGE) > $(DK_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_CYN}"Package complete: $(DK_TARGET_PACKAGE)"${CL_RST}
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(JISOO_TARGET_PACKAGE)
+	$(hide) $(MD5SUM) $(JISOO_TARGET_PACKAGE) > $(JISOO_TARGET_PACKAGE).md5sum
+	@echo -e ${CL_CYN}"Package complete: $(JISOO_TARGET_PACKAGE)"${CL_RST}
 
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true

@@ -68,14 +68,14 @@ function check_product()
         return
     fi
 
-    if (echo -n $1 | grep -q -e "^dk_") ; then
-        DARKKAT_BUILD=$(echo -n $1 | sed -e 's/^dk_//g')
+    if (echo -n $1 | grep -q -e "^jisoo_") ; then
+        JISOO_BUILD=$(echo -n $1 | sed -e 's/^jisoo_//g')
         HIDE_MAKEFILE_INCLUDES=y
     else
-        DARKKAT_BUILD=
+        JISOO_BUILD=
         HIDE_MAKEFILE_INCLUDES=n
     fi
-    export DARKKAT_BUILD
+    export JISOO_BUILD
     export HIDE_MAKEFILE_INCLUDES
 
         TARGET_PRODUCT=$1 \
@@ -516,11 +516,11 @@ function breakfast()
     if [ -z "$type" ]; then
         type="UNOFFICIAL"
     fi
-    export DK_RELEASE_TYPE=$type
-    DK_DEVICES_ONLY="true"
+    export JISOO_RELEASE_TYPE=$type
+    JISOO_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/darkkat/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/jisoo/vendorsetup.sh 2> /dev/null`
         do
 echo "including $f"
             . $f
@@ -537,7 +537,7 @@ echo "z$target" | grep -q "-"
             lunch $target
         else
             # This is probably just the darkkat model name
-            lunch dk_$target-userdebug
+            lunch jisoo_$target-userdebug
         fi
 fi
 return $?
