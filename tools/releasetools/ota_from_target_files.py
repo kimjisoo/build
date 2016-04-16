@@ -689,7 +689,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.2, 10)
-  script.Print("Enjoy DarkKat!");
+  script.Print("Enjoy!");
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
