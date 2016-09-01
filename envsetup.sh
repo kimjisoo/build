@@ -565,9 +565,6 @@ function breakfast()
 {
     target=$1
     local type=$2
-    if [ -z "$type" ]; then
-        type="UNOFFICIAL"
-    fi
     export JISOO_RELEASE_TYPE=$type
     JISOO_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
