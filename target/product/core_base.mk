@@ -20,6 +20,9 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.config.notification_sound=OnTheHunt.ogg \
     ro.config.alarm_alert=Alarm_Classic.ogg
 
+PRODUCT_PROPERTY_OVERRIDES := \
+    ro.substratum.verified=true
+
 PRODUCT_PACKAGES += \
     ContactsProvider \
     DefaultContainerService \
