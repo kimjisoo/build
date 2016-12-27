@@ -50,6 +50,7 @@ PRODUCT_PACKAGES += \
     ProxyHandler \
     Settings \
     SharedStorageBackup \
+    StorageManager \
     Telecom \
     TeleService \
     VpnDialogs \
