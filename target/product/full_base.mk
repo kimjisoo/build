@@ -21,20 +21,11 @@
 
 PRODUCT_PACKAGES := \
     libfwdlockengine \
-    OpenWnn \
-    libWnnEngDic \
-    libWnnJpnDic \
-    libwnndict \
     WAPPushManager
 
 PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
     LiveWallpapers \
     LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
     PhotoTable
 
 # Additional settings used in all AOSP builds
